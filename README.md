@@ -34,7 +34,7 @@ Se van a poder agregar nuevos turnos siempre y cuando el médico, el paciente y 
 
 También se van a poder modificar y eliminar turnos siempre y cuando no reste una hora para su realización.
 ## Medicos
-Se pueden ver todos los médicos y sus especialidades, agregar nuevos médicos y ver la página personal de cada uno donde estarán todos sus turnos.
+Se pueden ver todos los médicos y sus especialidades, agregar nuevos médicos y ver la página personal de cada uno donde estarán todos sus turnos y horarios; también, desde su página, se pueden agregar nuevos horarios en los que el médico va a estar disponible.
 ## Pacientes
 Se pueden ver todos los pacientes y agregar más, además de ver la página personal de cada uno con su información y turnos.
 ## Especialidades
