@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Agregar especialidad</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/add.css}">
+</head>
+<body class="body">
+
+	<article class="article">
+		<h1 class="h1">Agregar especialidad</h1>
+		<form action="#" th:action="@{/consultorios/{id}/add(id=${id})}" th:object="${registro}" method="post" class="form">
+            <label for="idEspecialidad" class="label">Especialidad: </label>
+			<select class="select" th:field="*{idEspecialidad}">
+                <option th:each="esp : ${especialidades}"
+                        th:text="${esp.nombre}" th:value="${esp.id}"></option>
+
+            </select>
+
+			<input type="submit" value="Agregar" class="btn">
+		</form>
+	</article>
+
+</body>
+</html>

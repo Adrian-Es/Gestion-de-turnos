@@ -1,0 +1,95 @@
+html, body{
+    height: 100%;
+	background: linear-gradient(225deg, rgba(132,169,172,1) 0%, rgba(59,105,120,1) 20%, rgba(32,64,81,1) 90%);
+    background-size: cover;
+    color: white;
+}
+
+.article{
+    display: grid;
+    height: 100%;
+    grid-template-rows: 0.1fr 0.9fr;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.form{
+
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.label{
+    display: block;
+    font-size: 30px;
+}
+
+.input{
+    display: block;
+    appearance: none;
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-bottom: 2px solid #e7dfd5;
+    font-size: 13px;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.btn{
+    background-color: transparent;
+    margin-top: 20px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    border: 1px double #3b6978;
+    width: 200px;
+    height: 40px;
+}
+
+.btn:hover{
+    background-color: #e7dfd5;
+    color: black;
+    transition: background-color 0.5s;
+}
+
+.select{
+    display: block;
+    appearance: none;
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-bottom: 2px solid #e7dfd5;
+}
+
+.select:focus{
+    outline: none;
+}
+
+.time{
+    height: 40px;
+    width: 200px;
+    border:none;
+}
+
+.time:focus{
+    outline:none;
+}
+
+.date{
+    height: 40px;
+    width: 200px;
+    border:none;
+}
+
+.date:focus{
+    outline:none;
+}

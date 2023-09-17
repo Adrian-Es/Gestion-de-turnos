@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nuevo Turno</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/add.css}">
+</head>
+<body class="body">
+
+	<article class="article">
+		<h1 class="h1">Nuevo Turno</h1>
+		<form action="#" th:action="@{/turnos/add}" th:object="${turno}" method="post" class="form">
+            <label for="fecha" class="label">Fecha: </label>
+			<input type="date"  id="fecha" th:field="${turno.fecha}" required class="date"> <br>
+
+			<label for="hora" class="label">Hora: </label>
+			<input type="time"  id="hora" th:field="${turno.hora}" required class="time"> <br>
+
+            <label for="idConsultorio" class="label">Consultorio: </label>
+			<select class="select" th:field="${turno.idConsultorio}">
+                <option th:each="con : ${consultorios}"
+                        th:text="${con.numero}" th:value="${con.id}"></option>
+
+            </select> <br>
+
+			<label for="idMedico" class="label">Medico: </label>
+			<select class="select" th:field="${turno.idMedico}">
+                <option th:each="med : ${medicos}"
+                        th:text="${med.nombre +' '+ med.apellido + ' - ' + med.especialidad.nombre}" th:value="${med.id}"></option>
+
+            </select> <br>
+
+			<label for="idPaciente" class="label">Paciente: </label>
+			<select class="select" th:field="${turno.idPaciente}">
+                <option th:each="pac : ${pacientes}"
+                        th:text="${pac.nombre +' '+ pac.apellido}" th:value="${pac.id}"></option>
+
+            </select> <br>
+
+			<input type="submit" value="Agregar" class="btn">
+		</form>
+	</article>
+
+</body>
+</html>

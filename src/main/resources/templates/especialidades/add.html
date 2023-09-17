@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nueva Especialidad</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/add.css}">
+</head>
+<body class="body">
+
+	<article class="article">
+		<h1 class="h1">Nueva Especialidad</h1>
+		<form action="#" th:action="@{/especialidades/add}" th:object="${especialidad}" method="post" class="form">
+			<label for="nombre" class="label">Nombre: </label>
+			<input type="text" placeholder="Nombre de la especialidad" id="name" th:field="${especialidad.nombre}" required class="input"> <br>
+
+            <label for="descripcion" class="label">Descripcion: </label>
+            <input type="text" placeholder="Descripcion de la especialidad" id="name" th:field="${especialidad.descripcion}" required class="input"> <br>
+
+			<input type="submit" value="Agregar" class="btn">
+		</form>
+	</article>
+
+</body>
+</html>

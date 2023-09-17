@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Turnos</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/turnos/home.css}">
+</head>
+<body class="body">
+
+	<article class="article">
+        <h1 class="h1">Turnos</h1>
+
+		<table class="table">
+
+			<tr>
+				<th>ID</th>
+				<th>Medico</th>
+				<th>Paciente</th>
+				<th>Consultorio</th>
+				<th>Fecha y hora</th>
+				<th>Modificar</th>
+				<th>Eliminar</th>
+				
+			</tr>
+			<tr th:each="t : ${turnos}">
+				<th th:text="${t.id}"></th>
+				<th> <a th:href="@{/medicos/{id}(id=${t.medico.id})}" th:text="${t.medico.nombre +' ' + t.medico.apellido}" class="a"></a> </th>
+				<th> <a th:href="@{/pacientes/{id}(id=${t.paciente.id})}" th:text="${t.paciente.nombre +' ' + t.paciente.apellido}" class="a"></a> </th>
+				<th> <a th:href="@{/consultorios/{id}(id=${t.consultorio.id})}" th:text="${'Consultorio N°'+t.consultorio.numero}" class="a"></a> </th>
+				<th th:text="${'Fecha: ' + t.fecha + ' Hora: '+ t.hora}"></th>
+				<th>
+					<form action="#" th:action="@{/turnos/{id}(id=${t.id})}" method="get" class="form">
+						<button type="submit" class="btn" id="update">
+							Modificar
+						</button>
+					</form>
+				</th>
+				<th>
+					<form action="#" th:action="@{/turnos/delete/{id}(id=${t.id})}" method="post" class="form">
+						<button type="submit" onClick="return confirm('Borrar este turno?')" class="btn" id="delete">
+							Eliminar
+						</button>
+					</form>
+				</th>
+
+			</tr>
+
+		</table>
+
+        <a class="add" th:href="@{/turnos/add}">Agregar turno</a>
+
+	</article>
+
+
+</body>
+</html>

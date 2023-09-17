@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Consultorio</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/consultorios/id.css}">
+</head>
+<body class="body">
+
+	<article class="article">
+		<h1 th:text="${'Consultorio N°' + consultorio.numero}" class="h1"></h1>
+        
+        <h2>Especialidades del consultorio</h2>
+
+		<table class="table">
+
+			<tr>
+				<th>Especialidad</th>
+				<th>Descripcion</th>
+			</tr>
+			<tr th:each="e : ${consultorio.especialidades}">
+				<th th:text="${e.nombre}"></th>
+				<th th:text="${e.descripcion}"> </th>
+
+			</tr>
+
+		</table>
+
+        <a class="add" th:href="@{/consultorios/{id}/add(id=${consultorio.id})}">Agregar especialidad al consultorio</a>
+
+	</article>
+
+
+</body>
+</html>

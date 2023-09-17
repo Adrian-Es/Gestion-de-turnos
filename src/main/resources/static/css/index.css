@@ -1,0 +1,40 @@
+html, body{
+    height: 100%;
+	background: linear-gradient(225deg, rgba(132,169,172,1) 0%, rgba(59,105,120,1) 20%, rgba(32,64,81,1) 90%);
+
+
+}
+
+.body{
+    display: grid;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+	grid-template-columns: 2fr 1fr 2fr;
+}
+
+.article{
+    grid-column: 2;
+    grid-row: 2;
+
+    display:flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+}
+
+a{
+    flex-grow: 1;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: white;
+    border: 1px double #3b6978;
+    font-size: 25px;
+    padding: 20px;
+}
+
+a:hover{
+    background-color: #e7dfd5;
+    color: black;
+    transition: background-color 0.5s;
+}

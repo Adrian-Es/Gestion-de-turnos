@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nuevo consultorio</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/add.css}">
+</head>
+<body class="body">
+
+	<article class="article">
+		<h1 class="h1">Nuevo consultorio</h1>
+		<form action="#" th:action="@{/consultorios/add}" th:object="${consultorio}" method="post" class="form">
+			<label for="nombre" class="label">Numero: </label>
+			<input type="text" placeholder="Numero del consultorio" th:field="${consultorio.numero}" required class="input"> <br>
+
+			<input type="submit" value="Agregar" class="btn">
+		</form>
+	</article>
+
+</body>
+</html>

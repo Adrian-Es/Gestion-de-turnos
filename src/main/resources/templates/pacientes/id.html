@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Paciente</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/pacientes/id.css}">
+</head>
+<body class="body">
+
+	<article class="article">
+		<h1 th:text="${paciente.nombre + ' ' + paciente.apellido}" class="h1"></h1>
+
+        <h4 class="h4" th:text="${'DNI: '+paciente.dni}"></h4>
+        
+        <h2 class="h2">Turnos</h2>
+
+		<table class="table">
+
+			<tr>
+				<th>ID</th>
+				<th>Medico</th>
+				<th>Paciente</th>
+				<th>Consultorio</th>
+				<th>Fecha y hora</th>
+				
+			</tr>
+			<tr th:each="t : ${turnos}">
+				<th th:text="${t.id}"></th>
+				<th th:text="${t.medico.nombre +' ' + t.medico.apellido}"> </th>
+				<th th:text="${t.paciente.nombre +' ' + t.paciente.apellido}"> </th>
+				<th th:text="${'Consultorio N°'+t.consultorio.numero}"> </th>
+				<th th:text="${'Fecha: ' + t.fecha + ' Hora: '+ t.hora}"></th>
+			</tr>
+
+		</table>
+
+	</article>
+
+
+</body>
+</html>

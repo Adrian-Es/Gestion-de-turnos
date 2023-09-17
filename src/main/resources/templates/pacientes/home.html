@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pacientes</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/consultorios/home.css}">
+
+</head>
+<body class="body">
+
+	<article class="article">
+
+        <h1 class="h1">Pacientes</h1>
+
+		<table class="table">
+
+			<tr>
+				<th>ID</th>
+				<th>Paciente</th>
+			</tr>
+			<tr th:each="pac : ${pacientes}">
+				<th th:text="${pac.id}"></th>
+				<th> <a th:href="@{/pacientes/{id}(id=${pac.id})}" th:text="${pac.nombre+' '+pac.apellido}" class="a"></a> </th>
+			</tr>
+
+		</table>
+
+        <a class="add" th:href="@{/pacientes/add}">Agregar paciente</a>
+
+	</article>
+
+</body>
+</html>

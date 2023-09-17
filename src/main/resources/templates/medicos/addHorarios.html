@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nuevo Horario</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/add.css}">
+</head>
+<body class="body">
+
+	<article class="article">
+		<h1 class="h1">Nuevo horario</h1>
+		<form action="#" th:action="@{/medicos/{id}/add(id=${id})}" th:object="${horario}" method="post" class="form">
+			<label for="horaEntrada" class="label">Hora entrada: </label>
+			<input type="time"  id="horaEntrada" th:field="${horario.horaEntrada}" required class="time"> <br>
+
+            <label for="horaSalida" class="label">Hora salida: </label>
+			<input type="time"  id="horaSalida" th:field="${horario.horaSalida}" required class="time"> <br>
+
+            <label for="idEspecialidad" class="label">Dia: </label>
+			<select class="select" th:field="${horario.dia}">
+                <option value="1">Lunes</option>
+                <option value="2">Martes</option>
+                <option value="3">Miercoles</option>
+                <option value="4">Jueves</option>
+                <option value="5">Viernes</option>
+                <option value="6">Sabado</option>
+            </select>
+
+			<input type="submit" value="Agregar" class="btn">
+		</form>
+	</article>
+
+</body>
+</html>
