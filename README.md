@@ -12,9 +12,9 @@ CREATE DATABASE IF NOT EXISTS `gestion-de-consultorios`;
 ```
 Y en ```src/main/resources``` se deben configurar las siguientes líneas del ```application.properties```:
 ```
-# Con la url donde se ejecutará el proyecto (ej: localhost)
+# Con la url donde se ejecutará la base de datos del proyecto (ej: localhost)
 enviroment.db.host.url =
-# Con el puerto donde se ejecutará el proyecto (ej: 3306) 
+# Con el puerto donde se ejecutará la base de datos del proyecto (ej: 3306) 
 enviroment.db.host.port = 
 # Con el usuario de la base de datos (ej: root)
 enviroment.db.host.username = 
@@ -23,6 +23,8 @@ enviroment.db.host.password =
 ```
 # Ejecutando el proyecto
 Es recomendable iniciar el proyecto mediante la herramienta ```Spring Tool Suite```, ejecutando el archivo ```src/main/java/com/prueba/GestionDeTunosCertantApplication.java```
+
+Importante: es necesario que el puerto local 8080 esté disponible porque ahí se va a ejecutar el proyecto.
 
 A partir de aquí, el proyecto se estará ejecutando en la url y el puerto especificados en el ```application.properties```
 # Breve explicación del funcionamiento
